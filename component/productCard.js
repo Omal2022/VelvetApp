@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const ProductCard = ({ title, description, image }) => {
     return (
-        <div className="relative w-[339px] h-[43vh] bg-[#F3F3F3] p-7 overflow-hidden rounded-[20px] shadow-md ">
+        <div className="relative w-[339px] h-[50vh] bg-[#F3F3F3] p-7 overflow-hidden rounded-[20px] shadow-md ">
             {/* Card Content */}
             <h3 className="text-[30px] font-bold text-[#004953] mb-3">
                 {title}
@@ -16,7 +16,7 @@ const ProductCard = ({ title, description, image }) => {
             </p>
 
             {/* Bottom-right ellipse */}
-            <div className="absolute bottom-0 right-0 mt-10">
+            <div className="absolute bottom-0 right-0 mt-20">
                 <Image
                     src={image}
                     alt="Ellipse Icon"

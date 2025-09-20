@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const SearchBar = () => {
     return (
-        <div className="flex  max-w-full">
+        <div className="flex  max-w-[45%]">
             <form
                 action="/api/subscribe"
                 method="get"
