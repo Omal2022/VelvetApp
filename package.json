@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NEXT_SKIP_TURBOPACK=1 next dev",
+    "dev": "cross-env CHOKIDAR_USEPOLLING=true NEXT_SKIP_TURBOPACK=1 next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -27,3 +27,4 @@
     "tailwindcss": "^4.1.13"
   }
 }
+

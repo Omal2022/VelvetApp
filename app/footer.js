@@ -29,7 +29,7 @@ const Footer = () => {
     return (
         <motion.footer
             id="contact"
-            className="bg-gradient-to-b from-[#004953] from-85% to-[#ffffff] min-h-[200px] sm:min-h-[400px] flex flex-col items-center justify-center text-center py-10 px-4"
+            className="bg-[#004953] min-h-[200px] sm:min-h-[400px] flex flex-col items-center justify-center text-center py-10 px-4"
             initial="hidden"
             whileInView="visible"
             viewport={{ amount: 0.3 }}
