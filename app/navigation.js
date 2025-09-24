@@ -16,7 +16,7 @@ const Navigation = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="w-full relative">
+        <nav className="w-full fixed top-0 left-0 z-[100] bg-[#004953]">
             {/* Desktop Nav */}
             <ul className="hidden lg:flex justify-center gap-12 py-5 text-white text-xl font-medium">
                 {links.map((link, index) => (
@@ -32,7 +32,7 @@ const Navigation = () => {
             </ul>
 
             {/* Hamburger Icon (always visible, top-right) */}
-            <div className="lg:hidden fixed top-4 right-6 z-50 bg-[#004953] rounded-full p-2 shadow-md">
+            <div className="lg:hidden absolute top-4 right-4 z-50 bg-[#004953] rounded-full p-2 shadow-md overflow-x-hidden">
                 <HamburgerIcon open={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
             </div>
 
