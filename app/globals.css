@@ -7,3 +7,14 @@ html {
 body {
   overflow-x: hidden;
 }
+
+/* ✅ Use Tailwind’s base layer */
+@layer base {
+ h1 {
+  font-family: var(--font-cinzel), serif;
+}
+
+p {
+  font-family: var(--font-montserrat), sans-serif;
+}
+}

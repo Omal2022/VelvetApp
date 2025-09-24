@@ -44,7 +44,7 @@ const page = () => {
           What We Offer.
         </motion.h1>
         <motion.p
-          className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] mb-6 max-w-[600px] text-center"
+          className="text-[14px!important] sm:text-[16px!important] md:text-[18px!important] lg:text-[20px!important] xl:text-[24px!important] mb-6 max-w-[600px] text-center"
           variants={textVariants}
         >
           What sets VelvetCore apart is our obsessive attention to detail. We

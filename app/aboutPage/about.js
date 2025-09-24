@@ -17,14 +17,12 @@ const About = () => {
             // viewport={{ once: true }}
             >
                 <h1
-                    className="font-bold 
-          text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] 
-          mb-6"
+                    className="font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] mb-6"
                 >
                     About us
                 </h1>
 
-                <p className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] mb-6">
+                <p className="text-[14px!important] sm:text-[16px!important] md:text-[18px!important] lg:text-[20px!important] xl:text-[24px!important] mb-6">
                     VelvetCore is a luxury event supply and planning company dedicated to
                     transforming ordinary spaces into breathtaking experiences.
                     Specializing in high-end weddings, corporate functions, social
@@ -32,14 +30,14 @@ const About = () => {
                     of art—elegant, timeless, and unforgettable.
                 </p>
 
-                <p className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px]">
+                <p className="text-[14px!important] sm:text-[16px!important] md:text-[18px!important] lg:text-[20px!important] xl:text-[24px!important]">
                     Our strength lies in the fusion of creativity and precision. Every
                     fabric, every flower, every lighting choice is intentional. We go
                     beyond aesthetics to craft emotional atmospheres that linger long
                     after the event ends.
                 </p>
 
-                <Button className="mt-10 bg-[#c5b358] text-white hover:bg-[#bfa23a]">Read More...</Button>
+                <Button className="mt-10 mb-16 bg-[#c5b358] text-white hover:bg-[#bfa23a]">Read More...</Button>
             </motion.div>
 
             {/* Image Section */}

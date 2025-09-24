@@ -5,11 +5,44 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "@/component/button";
 
-const images = [
-    "/Ellipse21.svg",
-    "/Ellipse22.svg",
-    "/Ellipse23.svg",
-    "/Ellipse24.svg",
+
+const items = [
+    {
+        image: "/Ellipse21.svg",
+        category: "Flowers Category",
+        subtitle: "Most rented flower from VelvetCore",
+        title: "#1 Tulip Flowers.",
+        colors: ["#b6b1a9", "#e5e1d8", "#f7e6a2", "#e7d6e7", "#7b7b7b", "#c5b358", "#d13c4b"],
+        description: "Tulips are a symbol of perfect love and elegance. Our tulip collection is available in a variety of colors for any event.",
+        likes: "800+"
+    },
+    {
+        image: "/Ellipse22.svg",
+        category: "Flowers Category",
+        subtitle: "Most rented flower from VelvetCore",
+        title: "#2 Rose Flowers.",
+        colors: ["#b6b1a9", "#e5e1d8", "#f7e6a2", "#e7d6e7", "#7b7b7b", "#c5b358", "#d13c4b"],
+        description: "Roses are classic and timeless. Perfect for weddings, anniversaries, and special occasions.",
+        likes: "1K+"
+    },
+    {
+        image: "/Ellipse23.svg",
+        category: "Flowers Category",
+        subtitle: "Most rented flower from VelvetCore",
+        title: "#3 Sunflower Bunch.",
+        colors: ["#f7e6a2", "#c5b358", "#e5e1d8", "#d13c4b", "#e7d6e7", "#7b7b7b", "#b6b1a9"],
+        description: "Sunflowers bring brightness and cheer to any event. Rent our vibrant sunflower bunches for a lively atmosphere.",
+        likes: "600+"
+    },
+    {
+        image: "/Ellipse24.svg",
+        category: "Flowers Category",
+        subtitle: "Most rented flower from VelvetCore",
+        title: "#4 Orchid Mix.",
+        colors: ["#e7d6e7", "#b6b1a9", "#c5b358", "#f7e6a2", "#e5e1d8", "#7b7b7b", "#d13c4b"],
+        description: "Orchids are exotic and luxurious. Our orchid mix is perfect for upscale events and decor.",
+        likes: "500+"
+    },
 ];
 
 // Variants for reusability
@@ -28,14 +61,14 @@ const staggerContainer = {
 };
 
 export default function SupplyPage() {
-    const [current, setCurrent] = useState(1); // Centered on 2nd image for demo
+    const [current, setCurrent] = useState(1); // Centered on 2nd item for demo
 
     const prevSlide = () => {
-        setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+        setCurrent((prev) => (prev - 1 + items.length) % items.length);
     };
 
     const nextSlide = () => {
-        setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+        setCurrent((prev) => (prev + 1) % items.length);
     };
 
     return (
@@ -49,11 +82,11 @@ export default function SupplyPage() {
             {/* Left Info Section */}
             <div className="flex-1 flex flex-col justify-center px-8 py-12 lg:py-0 bg-white">
                 <motion.h1
-                    className="text-5xl font-serif text-[#004953] mb-4"
+                    className="font-bold text-[24px] sm:text-[350px] md:text-[450px] lg:text-[40px] xl:text-[48px] text-[#004953] mb-4"
                     variants={fadeInUp}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="text-7xl font-normal align-top">S</span>uppliable items.
+                    Suppliable items.
                 </motion.h1>
 
                 <motion.p
@@ -112,25 +145,33 @@ export default function SupplyPage() {
                     >
                         &#8592;
                     </button>
-                    <div className="flex items-center justify-center gap-6 w-full overflow-hidden">
-                        {images.map((img, index) => {
-                            const isActive = index === current;
+                    <div className="relative flex items-center justify-center w-full py-2 overflow-hidden h-[180px]">
+                        {items.map((item, index) => {
+                            // Modular offset for infinite carousel
+                            let offset = (index - current + items.length) % items.length;
+                            if (offset > items.length / 2) offset -= items.length;
+                            if (Math.abs(offset) > 1) return null;
+                            const isActive = offset === 0;
+                            // Center the active image absolutely in the container
+                            const left = `calc(50% + ${offset * 160}px - 70px)`;
                             return (
                                 <motion.div
                                     key={index}
-                                    className="relative rounded-full overflow-hidden flex-shrink-0"
+                                    className={`absolute top-1/2 -translate-y-1/2 rounded-full overflow-hidden flex-shrink-0 cursor-pointer ${isActive ? 'z-10' : 'z-0'}`}
+                                    style={{ width: 140, height: 140, left }}
                                     animate={{
                                         scale: isActive ? 1.1 : 0.8,
-                                        opacity: isActive ? 1 : 0.3,
+                                        opacity: isActive ? 1 : 0.4,
                                         filter: isActive ? "blur(0px)" : "blur(6px)",
                                     }}
-                                    transition={{ duration: 0.5 }}
+                                    transition={{ type: 'spring', stiffness: 260, damping: 30 }}
+                                    onClick={() => setCurrent(index)}
                                 >
                                     <Image
-                                        src={img}
-                                        alt={`Slide ${index}`}
-                                        width={220}
-                                        height={220}
+                                        src={item.image}
+                                        alt={item.title}
+                                        width={140}
+                                        height={140}
                                         className="rounded-full object-cover border-4 border-white shadow-lg"
                                     />
                                 </motion.div>
@@ -146,7 +187,7 @@ export default function SupplyPage() {
                     </button>
                 </motion.div>
 
-                {/* Product Info */}
+                {/* Product Info (sync with current item) */}
                 <motion.div
                     className="w-full max-w-[500px] mx-auto text-center"
                     variants={staggerContainer}
@@ -155,21 +196,21 @@ export default function SupplyPage() {
                         className="text-[#004953] font-semibold text-lg mb-1 flex items-center justify-center gap-2"
                         variants={fadeInUp}
                     >
-                        Flowers Category <span className="text-xs">▼</span>
+                        {items[current].category} <span className="text-xs">▼</span>
                     </motion.div>
 
                     <motion.div
                         className="text-xs text-[#00a3b9] mb-1"
                         variants={fadeInUp}
                     >
-                        Most rented flower from VelvetCore
+                        {items[current].subtitle}
                     </motion.div>
 
                     <motion.div
                         className="text-3xl font-bold text-[#004953] mb-2"
                         variants={fadeInUp}
                     >
-                        <span className="text-[#c5b358]">#2</span> Rose Flowers.
+                        <span className="text-[#c5b358]">{items[current].title.split(" ")[0]}</span> {items[current].title.split(" ").slice(1).join(" ")}
                     </motion.div>
 
                     {/* Color Dots */}
@@ -177,7 +218,7 @@ export default function SupplyPage() {
                         className="flex items-center justify-center gap-3 mb-3"
                         variants={fadeInUp}
                     >
-                        {["#b6b1a9", "#e5e1d8", "#f7e6a2", "#e7d6e7", "#7b7b7b", "#c5b358", "#d13c4b"].map((color, i) => (
+                        {items[current].colors.map((color, i) => (
                             <span
                                 key={i}
                                 className="w-6 h-6 rounded-full border-2 border-white"
@@ -190,7 +231,7 @@ export default function SupplyPage() {
                         className="text-gray-500 text-sm mb-4"
                         variants={fadeInUp}
                     >
-                        Lorem ipsum dolor sit amet consectetur. Varius gravida vivamus id eu faucibus. Adipiscing in sit tortor ultrices nunc felis ipsum. Convallis amet proin eu et sit quam tortor volutpat vitae. Ultrices a pharetra lectus leo sollicitudin id aenean.
+                        {items[current].description}
                     </motion.div>
 
                     {/* Avatars and likes */}
@@ -203,7 +244,7 @@ export default function SupplyPage() {
                             <span className="w-8 h-8 rounded-full bg-[#c5b358] border-2 border-white inline-block"></span>
                             <span className="w-8 h-8 rounded-full bg-[#00a3b9] border-2 border-white inline-block"></span>
                         </div>
-                        <span className="bg-white px-2 py-1 rounded-full text-xs font-semibold shadow">1K+</span>
+                        <span className="bg-white px-2 py-1 rounded-full text-xs font-semibold shadow">{items[current].likes}</span>
                     </motion.div>
                 </motion.div>
             </div>

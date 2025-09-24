@@ -45,7 +45,7 @@ const Footer = () => {
                     <motion.h1 className="text-3xl sm:text-4xl md:text-[48px] font-bold text-white" variants={fadeInUp}>
                         Contact Us
                     </motion.h1>
-                    <motion.p className="mt-3 text-base sm:text-lg md:text-[24px] text-[#00e0ff]" variants={fadeInUp}>
+                    <motion.p className="text-[14px!important] sm:text-[16px!important] md:text-[18px!important] lg:text-[20px!important] xl:text-[24px!important] mb-6 max-w-[600px] mx-auto text-center text-[#00e0ff]" variants={fadeInUp}>
                         You can reach out to us now with the click of a button. Hover over accounts to view QR codes.
                     </motion.p>
                 </motion.div>
