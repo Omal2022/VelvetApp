@@ -117,7 +117,7 @@ const Footer = () => {
                             onClick={(e) => e.stopPropagation()}
                         >
                             <Image src="/1instagram.svg" alt="Instagram" width={80} height={80} className="mb-4" />
-                            <Image src="/rectangle26.svg" alt="Instagram QR" width={300} height={300} className="drop-shadow-lg" />
+                            <Image src="/Rectangle26.svg" alt="Instagram QR" width={300} height={300} className="drop-shadow-lg" />
                             <a href="https://www.instagram.com/velvetcore.event" target="_blank" rel="noopener noreferrer" className="mt-4 text-[#004953] underline">
                                 Open Instagram
                             </a>
@@ -143,7 +143,7 @@ const Footer = () => {
                             onClick={(e) => e.stopPropagation()}
                         >
                             <Image src="/2tiktok.svg" alt="TikTok" width={80} height={80} className="mb-4" />
-                            <Image src="/rectangle27.svg" alt="TikTok QR" width={300} height={300} className="drop-shadow-lg" />
+                            <Image src="/Rectangle27.svg" alt="TikTok QR" width={300} height={300} className="drop-shadow-lg" />
                             <a href="https://www.tiktok.com/@velvetcore.event" target="_blank" rel="noopener noreferrer" className="mt-4 text-[#004953] underline">
                                 Open TikTok
                             </a>
