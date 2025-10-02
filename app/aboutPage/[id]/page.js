@@ -135,8 +135,8 @@ const AboutDetailPage = () => {
         >
           <h2 className="text-3xl font-semibold mb-4">Our Signature</h2>
           <p className="text-lg leading-relaxed">
-            What sets Velvetcore apart is our obsessive attention to detail. We don’t copy
-            trends—we translate your vision into a visual language that’s entirely yours.
+            What sets Velvetcore apart is our obsessive attention to detail. We don&apos;t copy
+            trends—we translate your vision into a visual language that&apos;s entirely yours.
             With a team experienced in both grand-scale execution and intimate touches,
             every Velvetcore event is a reflection of excellence.
           </p>
@@ -153,7 +153,7 @@ const AboutDetailPage = () => {
           <p className="text-lg leading-relaxed">
             At Velvetcore, we believe luxury is found in the details. It&apos;s the weight of
             velvet, the shimmer of gold under soft lights, the flow of a room that speaks
-            silently to its guests. Our mission is to translate our clients visions into
+            silently to its guests. Our mission is to translate our clients&apos; visions into
             fully immersive realities—always with sophistication, always with heart.
           </p>
         </motion.section>
@@ -169,7 +169,7 @@ const AboutDetailPage = () => {
           <p className="text-lg leading-relaxed">
             We serve clients who value elegance, exclusivity, and authenticity. From visionary
             brides and corporate tastemakers to high-profile hosts and refined celebrants,
-            our clients understand that excellence is not accidental—it’s curated.
+            our clients understand that excellence is not accidental—it&apos;s curated.
           </p>
         </motion.section>
       </main>
@@ -177,3 +177,4 @@ const AboutDetailPage = () => {
   );
 };
 
+export default AboutDetailPage;
