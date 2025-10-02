@@ -21,9 +21,26 @@ body {
 @layer base {
   h1 {
     font-family: var(--font-cinzel), serif;
+    font-size: 3rem; /* adjust as needed */
+    background: linear-gradient(180deg, #004953, #00a2b9);
+    -webkit-background-clip: text; /* For Safari/Chrome */
+    -webkit-text-fill-color: transparent; /* For Safari/Chrome */
+    background-clip: text; /* Standard property */
+    color: transparent; /* Fallback */
+    font-weight: 700;
+    font-size: 49px;
+  }
+  h2 {
+    font-family: var(--font-cinzel), serif;
+    text-transform: uppercase;
+    color: #004953;
+  }
+  li {
+    list-style-type: none;
   }
 
   p {
     font-family: var(--font-montserrat), sans-serif;
   }
+
 }

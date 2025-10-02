@@ -2,6 +2,7 @@ import { Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
 import Footer from "./footer";
 
+
 const cinzel = Cinzel({
   subsets: ["latin"],
   weight: ["400", "500", "700"], // add more weights if needed

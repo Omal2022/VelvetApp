@@ -7,7 +7,7 @@ const ProductCard = ({ title, description, image }) => {
     return (
         <div className="relative w-[339px] md:max-w-md  sm:max-w-xs xl:max-w-lg  min-h-[330px] h-[60vw] sm:h-[400px] md:h-[400px] xl:h-[410px] bg-[#F3F3F3] p-4 sm:p-6 md:p-7 overflow-hidden rounded-[20px] shadow-md flex flex-col ">
             {/* Card Content */}
-            <h3 className="text-[30px] font-bold text-[#004953] mb-3">
+            <h3 className="text-[30px] font-bold mb-3 bg-gradient-to-r from-[#00A3B9] to-[#004953] bg-clip-text text-transparent">
                 {title}
             </h3>
 

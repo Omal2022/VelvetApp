@@ -82,12 +82,10 @@ export default function SupplyPage() {
             {/* Left Info Section */}
             <div className="flex-1 flex flex-col justify-center px-8 py-12 lg:py-0 bg-white">
                 <motion.h1
-                    className="font-bold text-[24px] sm:text-[350px] md:text-[450px] lg:text-[40px] xl:text-[48px] text-[#004953] mb-4"
+                    className="font-bold text-[24px] sm:text-[350px] md:text-[40px] lg:text-[40px] xl:text-[48px] text-[#004953] mb-4"
                     variants={fadeInUp}
                     transition={{ duration: 0.6 }}
-                >
-                    Suppliable items.
-                </motion.h1>
+                ><span className="lg:text-[100px] xl:text-[130px]">S</span><span>uppliable items.</span></motion.h1>
 
                 <motion.p
                     className="text-gray-500 mb-8 max-w-md"

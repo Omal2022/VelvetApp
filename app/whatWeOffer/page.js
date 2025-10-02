@@ -40,8 +40,7 @@ const page = () => {
         <motion.h1
           className="font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] mb-6"
           variants={textVariants}
-        >
-          What We Offer.
+        ><span className="lg:text-[100px] xl:text-[130px]">W</span><span>hat We Offer.</span>
         </motion.h1>
         <motion.p
           className="text-[14px!important] sm:text-[16px!important] md:text-[18px!important] lg:text-[20px!important] xl:text-[24px!important] mb-6 max-w-[600px] text-center"
@@ -62,7 +61,7 @@ const page = () => {
         viewport={{ once: false, amount: 0.2 }}
       >
         {detailsOnCards.map((card, index) => (
-          <motion.div key={index} variants={cardVariants}>      
+          <motion.div key={index} variants={cardVariants}>
             <Card
               title={card.title}
               description={card.description}

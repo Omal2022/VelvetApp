@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Button from "@/component/button";
 
 const About = () => {
@@ -17,9 +18,9 @@ const About = () => {
             // viewport={{ once: true }}
             >
                 <h1
-                    className="font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] mb-6"
+                    className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] mb-6"
                 >
-                    About us
+                    <span className="lg:text-[100px] xl:text-[130px]">A</span><span className="text-[ #004953 !important]">bout us</span>
                 </h1>
 
                 <p className="text-[14px!important] sm:text-[16px!important] md:text-[18px!important] lg:text-[20px!important] xl:text-[24px!important] mb-6">
@@ -36,8 +37,9 @@ const About = () => {
                     beyond aesthetics to craft emotional atmospheres that linger long
                     after the event ends.
                 </p>
-
-                <Button className="mt-10 mb-16 bg-[#c5b358] text-white hover:bg-[#bfa23a]">Read More...</Button>
+                <Link href="/aboutPage/${id}">
+                    <Button className="mt-10 mb-16 bg-[#c5b358] text-white hover:bg-[#bfa23a]" >Read More...</Button>
+                </Link>
             </motion.div>
 
             {/* Image Section */}
