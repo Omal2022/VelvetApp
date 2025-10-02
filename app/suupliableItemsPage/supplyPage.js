@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "@/component/button";
 
-
 const items = [
     {
         image: "/Ellipse21.svg",
@@ -45,7 +44,7 @@ const items = [
     },
 ];
 
-// Variants for reusability
+// Variants for animations
 const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
@@ -85,7 +84,10 @@ export default function SupplyPage() {
                     className="font-bold text-[24px] sm:text-[350px] md:text-[40px] lg:text-[40px] xl:text-[48px] text-[#004953] mb-4"
                     variants={fadeInUp}
                     transition={{ duration: 0.6 }}
-                ><span className="lg:text-[100px] xl:text-[130px]">S</span><span>uppliable items.</span></motion.h1>
+                >
+                    <span className="lg:text-[100px] xl:text-[130px]">S</span>
+                    <span>uppliable items.</span>
+                </motion.h1>
 
                 <motion.p
                     className="text-gray-500 mb-8 max-w-md"
@@ -155,14 +157,14 @@ export default function SupplyPage() {
                             return (
                                 <motion.div
                                     key={index}
-                                    className={`absolute top-1/2 -translate-y-1/2 rounded-full overflow-hidden flex-shrink-0 cursor-pointer ${isActive ? &apos;z-10&apos; : &apos;z-0&apos;}`}
+                                    className={`absolute top-1/2 -translate-y-1/2 rounded-full overflow-hidden flex-shrink-0 cursor-pointer ${isActive ? 'z-10' : 'z-0'}`}
                                     style={{ width: 140, height: 140, left }}
                                     animate={{
                                         scale: isActive ? 1.1 : 0.8,
                                         opacity: isActive ? 1 : 0.4,
                                         filter: isActive ? "blur(0px)" : "blur(6px)",
                                     }}
-                                    transition={{ type: &apos;spring&apos;, stiffness: 260, damping: 30 }}
+                                    transition={{ type: 'spring', stiffness: 260, damping: 30 }}
                                     onClick={() => setCurrent(index)}
                                 >
                                     <Image
