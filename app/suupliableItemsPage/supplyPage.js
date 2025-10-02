@@ -155,14 +155,14 @@ export default function SupplyPage() {
                             return (
                                 <motion.div
                                     key={index}
-                                    className={`absolute top-1/2 -translate-y-1/2 rounded-full overflow-hidden flex-shrink-0 cursor-pointer ${isActive ? 'z-10' : 'z-0'}`}
+                                    className={`absolute top-1/2 -translate-y-1/2 rounded-full overflow-hidden flex-shrink-0 cursor-pointer ${isActive ? &apos;z-10&apos; : &apos;z-0&apos;}`}
                                     style={{ width: 140, height: 140, left }}
                                     animate={{
                                         scale: isActive ? 1.1 : 0.8,
                                         opacity: isActive ? 1 : 0.4,
                                         filter: isActive ? "blur(0px)" : "blur(6px)",
                                     }}
-                                    transition={{ type: 'spring', stiffness: 260, damping: 30 }}
+                                    transition={{ type: &apos;spring&apos;, stiffness: 260, damping: 30 }}
                                     onClick={() => setCurrent(index)}
                                 >
                                     <Image
