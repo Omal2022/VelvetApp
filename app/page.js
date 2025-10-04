@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
 
       {/* About Section */}
-      <section id="about" className="sm:flex sm:flex-col flex flex-col gap-10 sm:gap-10 px-4 sm:px-8 md:px-20 py-12 sm:py-20 bg-[#f0f0f0] sm:mt-[30px] mt-10">
+      <section id="about" className="sm:flex sm:flex-col flex flex-col gap-10 sm:gap-10 px-4 sm:px-8 md:px-20 pt-12 sm:py-20 bg-[#f0f0f0] sm:mt-[30px] mt-10">
         <SearchBar />
         <About />
       </section>

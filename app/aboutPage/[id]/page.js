@@ -104,23 +104,31 @@ const AboutDetailPage = () => {
           variants={fadeInUp}
         >
           <h2 className="text-3xl font-semibold mb-4">Our Primary Objectives</h2>
-          <ul className="list-disc pl-6 space-y-4 text-lg leading-relaxed">
+          <ul className="pl-6 space-y-4 text-lg leading-relaxed">
             <li>
-              <b>Global Market Presence:</b> Establish a strong presence in the global
+              <b>Global Market Presence:</b>
+              <br />
+              Establish a strong presence in the global
               event supplies market, catering to diverse client needs both locally and
               internationally.
             </li>
             <li>
-              <b>Comprehensive Product Offerings:</b> Provide a wide range of
+              <b>Comprehensive Product Offerings:</b>
+              <br />
+              Provide a wide range of
               high-quality products—utensils, furniture, equipment, and more—to meet
               the varied requirements of events.
             </li>
             <li>
-              <b>Customer Satisfaction:</b> Ensure exceptional customer service, timely
+              <b>Customer Satisfaction:</b>
+              <br />
+              Ensure exceptional customer service, timely
               delivery, and flexible rental options to build long-term client relationships.
             </li>
             <li>
-              <b>Logistical Excellence:</b> Develop efficient logistics and supply chain
+              <b>Logistical Excellence:</b
+              ><br />
+              Develop efficient logistics and supply chain
               management systems to support seamless product delivery, setup, and retrieval.
             </li>
           </ul>
