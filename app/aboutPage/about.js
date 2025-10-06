@@ -8,10 +8,10 @@ import Button from "@/component/button";
 
 const About = ({ id = 1 }) => {
     return (
-        <div className="relative flex flex-col md:flex-row w-full items-center justify-between gap-10">
+        <div className="relative flex flex-col md:flex-row w-full items-center justify-between gap-10 px-5 md:px-12 lg:px-20">
             {/* Text Section */}
             <motion.div
-                className="text-center md:text-left md:max-w-[600px] px-5 md:px-12 lg:px-20"
+                className="text-center md:text-left md:max-w-[600px]"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -37,29 +37,29 @@ const About = ({ id = 1 }) => {
                 </p>
 
                 <Link href={`/aboutPage/${id}`}>
-                    <Button className="mt-10 mb-14 bg-[#c5b358] text-white hover:bg-[#bfa23a]">
+                    <Button className="mt-10 mb-16 bg-[#c5b358] text-white hover:bg-[#bfa23a]">
                         Read More...
                     </Button>
                 </Link>
             </motion.div>
 
             {/* Image Section */}
-            <div className="relative w-screen overflow-hidden flex justify-center md:justify-end">
-                <motion.div
-                    className="relative  md:h-[500px] lg:h-[600px] w-full flex justify-center md:justify-end"
-                    initial={{ opacity: 0, x: 50, rotate: 20 }}
-                    whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
+            <motion.div
+                className="flex justify-center md:justify-end relative h-[400px] md:h-[500px] lg:h-[600px] w-full"
+                initial={{ opacity: 0, x: 50, rotate: 20 }}
+                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+                transition={{ duration: 0.8 }}
+            >
+                <div className="absolute bottom-0 right-0 w-full flex justify-end">
                     <Image
                         src="/design_2.svg"
                         alt="About VelvetCore"
                         width={600}
                         height={600}
-                        className="w-full h-auto max-w-none object-cover"
+                        className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
                     />
-                </motion.div>
-            </div>
+                </div>
+            </motion.div>
         </div>
     );
 };

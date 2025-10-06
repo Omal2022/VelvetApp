@@ -37,10 +37,10 @@ body {
   }
   li {
     list-style-type: none;
-    font-family: var(--font-montserrat), sans-serif;
   }
 
   p {
     font-family: var(--font-montserrat), sans-serif;
   }
+
 }
