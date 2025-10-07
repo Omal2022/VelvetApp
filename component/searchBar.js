@@ -9,7 +9,7 @@ const SearchBar = () => {
                 method="get"
                 className="z-10 w-full max-w-[747px]"
             >
-                <div className="flex items-center bg-white rounded-full shadow-md h-12 sm:h-14 px-4 sm:px-4 w-full overflow-visible">
+                <div className="flex items-center bg-[#f8f8f8] rounded-b-2xl shadow-md h-12 sm:h-14 px-4 sm:px-4 w-full overflow-visible">
                     {/* Search Icon */}
                     <Image
                         src="/search.svg"

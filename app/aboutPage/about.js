@@ -8,10 +8,10 @@ import Button from "@/component/button";
 
 const About = ({ id = 1 }) => {
     return (
-        <div className="relative flex flex-col md:flex-row w-full items-center justify-between gap-10 px-5 md:px-12 lg:px-20">
+        <div className="relative flex flex-col md:flex-row w-full items-center justify-between gap-10 ">
             {/* Text Section */}
             <motion.div
-                className="text-center md:text-left md:max-w-[600px]"
+                className="text-center md:text-left md:w-full lg:w-full "
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -21,7 +21,7 @@ const About = ({ id = 1 }) => {
                     <span className="!text-[#004953]">bout us</span>
                 </h1>
 
-                <p className="!text-[14px] sm:!text-[16px] md:!text-[18px] lg:!text-[20px] xl:!text-[24px] mb-6">
+                <p className="text-[14px!important] sm:text-[16px!important] md:text-[18px!important] lg:text-[20px!important] xl:text-[24px!important] mb-6 max-w-[600px!important]">
                     VelvetCore is a luxury event supply and planning company dedicated to
                     transforming ordinary spaces into breathtaking experiences.
                     Specializing in high-end weddings, corporate functions, social
@@ -29,7 +29,7 @@ const About = ({ id = 1 }) => {
                     of art—elegant, timeless, and unforgettable.
                 </p>
 
-                <p className="!text-[14px] sm:!text-[16px] md:!text-[18px] lg:!text-[20px] xl:!text-[24px]">
+                <p className="text-[14px!important] sm:text-[16px!important] md:text-[18px!important] lg:text-[20px!important] xl:text-[24px!important] mb-6 max-w-[600px!important]">
                     Our strength lies in the fusion of creativity and precision. Every
                     fabric, every flower, every lighting choice is intentional. We go
                     beyond aesthetics to craft emotional atmospheres that linger long
@@ -55,7 +55,7 @@ const About = ({ id = 1 }) => {
                         src="/design_2.svg"
                         alt="About VelvetCore"
                         width={600}
-                        height={600}
+                        height={1000}
                         className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
                     />
                 </div>
