@@ -5,7 +5,7 @@ import Navigation from "./navigation";
 
 const Header = () => {
     return (
-        <section className="w-full bg-[#f0f0f0] md:h-[940px]  lg:h-[940px] h-100 p-0 m-0">
+        <section className="w-full bg-[#f0f0f0] lg:h-[940px] h-100 p-0 m-0">
             <div className="relative h-[400px] sm:h-[500px] md:h-[600px] flex flex-col items-center justify-center w-full p-0 m-0">
 
                 {/* Navigation fixed on top */}
@@ -34,8 +34,7 @@ const Header = () => {
                 </div>
 
                 {/* 👉 Gradient Line with About Us text fixed at bottom */}
-
-                <div className="hidden md:flex  absolute top-115 left-0 w-full items-center z-10">
+                <div className="hidden md:flex absolute top-115 left-0 w-full items-center z-10">
                     {/* Left Gradient */}
                     <div className="flex-1 h-[60px] bg-gradient-to-r from-[#C8B762] to-transparent"></div>
 
