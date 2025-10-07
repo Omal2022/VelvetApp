@@ -43,4 +43,11 @@ body {
   p {
     font-family: var(--font-montserrat), sans-serif;
   }
+  .h1-white {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: white !important;
+  color: white !important;
+}
+
 }

@@ -1,26 +1,47 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Navigation from "./navigation";
 
 const Header = () => {
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
         <section className="w-full bg-[#f0f0f0] lg:h-[940px] h-100 p-0 m-0">
-            <div className="relative h-[400px] sm:h-[500px] md:h-[600px] flex flex-col items-center justify-center w-full p-0 m-0">
-
+            <div
+                className="relative h-[400px] sm:h-[500px] md:h-[600px] flex flex-col items-center justify-center w-full p-0 m-0"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
                 {/* Navigation fixed on top */}
                 <div className="absolute top-0 left-0 w-full z-50">
                     <Navigation />
                 </div>
 
-                {/* Background Image */}
-                <Image
-                    src="/landingImg.jpg"
-                    alt="Landing page image"
-                    fill
-                    className="object-cover w-full h-full"
-                    priority
-                />
+                {/* ✅ Background Image that changes on hover */}
+                <div
+                    className="absolute inset-0 z-0 overflow-hidden"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    {/* Background Image with hover transition */}
+                    <Image
+                        src={isHovered ? "/LandingRectangle18.png" : "/landingImg.jpg"}
+                        alt="Landing page image"
+                        fill
+                        className={`object-cover w-full h-full transition-all duration-700 ease-in-out transform 
+      ${isHovered ? "scale-105 brightness-110 opacity-90" : "scale-100 brightness-100 opacity-100"}`}
+                        priority
+                    />
+
+                    {/* Overlay gradient for depth & elegance */}
+                    <div
+                        className={`absolute inset-0 transition-opacity duration-700 ease-in-out pointer-events-none 
+      ${isHovered ? "opacity-30 bg-black" : "opacity-10 bg-black"}`}
+                    />
+                </div>
+
 
                 {/* 👉 Center Logo stays in the middle */}
                 <div className="z-10">
@@ -35,22 +56,18 @@ const Header = () => {
 
                 {/* 👉 Gradient Line with About Us text fixed at bottom */}
                 <div className="hidden md:flex absolute top-115 left-0 w-full items-center z-10">
-                    {/* Left Gradient */}
-                    <div className="flex-1 h-[60px] bg-gradient-to-r from-[#C8B762] to-transparent"></div>
+                    <div className="w-[800px]  h-[60px] bg-gradient-to-r from-[#C8B762] to-transparent"></div>
 
-                    {/* Text */}
                     <Image
                         src="/Landing_text.svg"
                         alt="About Us"
                         width={440}
                         height={440}
-                        className="sm:w-[500px] md:w-[600px] lg:w-[600px] h-auto"
+                        className="sm:w-[500px] md:w-[600px] lg:w-[600px] h-auto mr-[300px]"
                     />
-
-                    {/* Right Gradient */}
-                    <div className="flex-1 h-[60px] bg-gradient-to-l from-[#C8B762] to-transparent"></div>
+                    ``
+                    <div className="w-full h-[60px] bg-gradient-to-l from-[#C8B762] to-transparent"></div>
                 </div>
-
             </div>
         </section>
     );

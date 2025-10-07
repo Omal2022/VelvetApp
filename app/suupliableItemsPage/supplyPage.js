@@ -7,41 +7,33 @@ import Button from "@/component/button";
 
 const items = [
     {
-        image: "/Ellipse21.svg",
+        image: "/Ellipse22.png",
         category: "Flowers Category",
         subtitle: "Most rented flower from VelvetCore",
-        title: "#1 Tulip Flowers.",
-        colors: ["#b6b1a9", "#e5e1d8", "#f7e6a2", "#e7d6e7", "#7b7b7b", "#c5b358", "#d13c4b"],
-        description: "Tulips are a symbol of perfect love and elegance. Our tulip collection is available in a variety of colors for any event.",
-        likes: "800+"
-    },
-    {
-        image: "/Ellipse22.svg",
-        category: "Flowers Category",
-        subtitle: "Most rented flower from VelvetCore",
-        title: "#2 Rose Flowers.",
+        title: "#1 Pionies.",
         colors: ["#b6b1a9", "#e5e1d8", "#f7e6a2", "#e7d6e7", "#7b7b7b", "#c5b358", "#d13c4b"],
         description: "Roses are classic and timeless. Perfect for weddings, anniversaries, and special occasions.",
         likes: "1K+"
     },
     {
-        image: "/Ellipse23.svg",
+        image: "/Ellipse(1).png",
         category: "Flowers Category",
         subtitle: "Most rented flower from VelvetCore",
-        title: "#3 Sunflower Bunch.",
+        title: "#2 Rose Flowers.",
+        colors: ["#b6b1a9", "#e5e1d8", "#f7e6a2", "#e7d6e7", "#7b7b7b", "#c5b358", "#d13c4b"],
+        description: "Tulips are a symbol of perfect love and elegance. Our tulip collection is available in a variety of colors for any event.",
+        likes: "800+"
+    },
+    {
+        image: "/Ellipse22(2).png",
+        category: "Flowers Category",
+        subtitle: "Most rented flower from VelvetCore",
+        title: "#3 Wisteria.",
         colors: ["#f7e6a2", "#c5b358", "#e5e1d8", "#d13c4b", "#e7d6e7", "#7b7b7b", "#b6b1a9"],
         description: "Sunflowers bring brightness and cheer to any event. Rent our vibrant sunflower bunches for a lively atmosphere.",
         likes: "600+"
     },
-    {
-        image: "/Ellipse24.svg",
-        category: "Flowers Category",
-        subtitle: "Most rented flower from VelvetCore",
-        title: "#4 Orchid Mix.",
-        colors: ["#e7d6e7", "#b6b1a9", "#c5b358", "#f7e6a2", "#e5e1d8", "#7b7b7b", "#d13c4b"],
-        description: "Orchids are exotic and luxurious. Our orchid mix is perfect for upscale events and decor.",
-        likes: "500+"
-    },
+
 ];
 
 // Variants for animations
@@ -140,12 +132,12 @@ export default function SupplyPage() {
                 >
                     <button
                         onClick={prevSlide}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 p-2 rounded-full shadow text-3xl text-[#004953] hover:bg-[#c5b358] ml-10"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 p-2 rounded-full shadow text-3xl text-[#004953] bg-white/80 hover:bg-[#c5b358] ml-10 z-20"
                         aria-label="Previous"
                     >
                         &#8592;
                     </button>
-                    <div className="relative flex items-center justify-center w-full py-2 overflow-hidden h-[180px]">
+                    <div className="relative flex items-center justify-center w-full py-2 overflow-hidden h-[280px]">
                         {items.map((item, index) => {
                             // Modular offset for infinite carousel
                             let offset = (index - current + items.length) % items.length;
@@ -153,15 +145,15 @@ export default function SupplyPage() {
                             if (Math.abs(offset) > 1) return null;
                             const isActive = offset === 0;
                             // Center the active image absolutely in the container
-                            const left = `calc(50% + ${offset * 160}px - 70px)`;
+                            const left = `calc(50% + ${offset * 260}px - 120px)`;
                             return (
                                 <motion.div
                                     key={index}
                                     className={`absolute top-1/2 -translate-y-1/2 rounded-full overflow-hidden flex-shrink-0 cursor-pointer ${isActive ? 'z-10' : 'z-0'}`}
-                                    style={{ width: 140, height: 140, left }}
+                                    style={{ width: 240, height: 240, left }}
                                     animate={{
-                                        scale: isActive ? 1.1 : 0.8,
-                                        opacity: isActive ? 1 : 0.4,
+                                        scale: isActive ? 1.15 : 0.82,
+                                        opacity: isActive ? 1 : 0.5,
                                         filter: isActive ? "blur(0px)" : "blur(6px)",
                                     }}
                                     transition={{ type: 'spring', stiffness: 260, damping: 30 }}
@@ -170,8 +162,8 @@ export default function SupplyPage() {
                                     <Image
                                         src={item.image}
                                         alt={item.title}
-                                        width={140}
-                                        height={140}
+                                        width={240}
+                                        height={240}
                                         className="rounded-full object-cover border-4 border-white shadow-lg"
                                     />
                                 </motion.div>
@@ -180,7 +172,7 @@ export default function SupplyPage() {
                     </div>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow text-3xl text-[#004953] hover:bg-[#c5b358] mr-10"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow text-3xl text-[#004953] hover:bg-[#c5b358] mr-10 z-20"
                         aria-label="Next"
                     >
                         &#8594;
