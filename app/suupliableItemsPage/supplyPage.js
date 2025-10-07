@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "@/component/button";
@@ -11,27 +11,58 @@ const items = [
         category: "Flowers Category",
         subtitle: "Most rented flower from VelvetCore",
         title: "#1 Pionies.",
-        colors: ["#b6b1a9", "#e5e1d8", "#f7e6a2", "#e7d6e7", "#7b7b7b", "#c5b358", "#d13c4b"],
+        colors: [
+            "linear-gradient(135deg,#A95B2B 0%,#E3D0A5 100%)",
+            "#D2DBDA",
+            "linear-gradient(135deg,#8E1435 0%,#AB5058 100%)",
+            "linear-gradient(135deg,#CFC7C1 0%,#D4B089 100%)",
+        ],
+        // map each color dot to a preview image; adjust paths to match your public images
+        imageVariants: [
+            "/Ellipse22.png",
+            "/Ellipse21.png", // your requested pairing for #D2DBDA
+            "/Ellipse23.png", // your requested pairing for linear-gradient(135deg,#8E1435 0%,#AB5058 100%)
+            "/Ellipse24.png", // your requested pairing for linear-gradient(135deg,#CFC7C1 0%,#D4B089 100%)
+        ],
         description: "Roses are classic and timeless. Perfect for weddings, anniversaries, and special occasions.",
-        likes: "1K+"
+
     },
     {
         image: "/Ellipse(1).png",
         category: "Flowers Category",
         subtitle: "Most rented flower from VelvetCore",
         title: "#2 Rose Flowers.",
-        colors: ["#b6b1a9", "#e5e1d8", "#f7e6a2", "#e7d6e7", "#7b7b7b", "#c5b358", "#d13c4b"],
+        colors: ["#876287", "#CEBAAB", "#FED810", "#8D096F", "#2F4BCC", "#B81538"],
+        imageVariants: [
+            "/Ellipse(1).png", // paired with #876287
+            "/r1.png", // paired with #CEBAAB
+            "/r2.png", // paired with #FED810
+            "/r3.png", // paired with #8D096F
+            "/r5.png", // paired with #2F4BCC
+            "/r6.png", // paired with #B81538
+        ],
         description: "Tulips are a symbol of perfect love and elegance. Our tulip collection is available in a variety of colors for any event.",
-        likes: "800+"
+
     },
     {
         image: "/Ellipse22(2).png",
         category: "Flowers Category",
         subtitle: "Most rented flower from VelvetCore",
         title: "#3 Wisteria.",
-        colors: ["#f7e6a2", "#c5b358", "#e5e1d8", "#d13c4b", "#e7d6e7", "#7b7b7b", "#b6b1a9"],
+        colors: ["#9FD6CF", "#C23456", "#BD210D", "#DCC116", "#C2CF4A", "#BCBD8F", "#AC76D0", "#333C38", "#F0C46E"],
+        imageVariants: [
+            "/Ellipse22(2).png",
+            "/1.png",
+            "/2.png",
+            "/3.png",
+            "/4.png",
+            "/5.png",
+            "/6.png",
+            "/7.png",
+            "/8.png",
+        ],
         description: "Sunflowers bring brightness and cheer to any event. Rent our vibrant sunflower bunches for a lively atmosphere.",
-        likes: "600+"
+
     },
 
 ];
@@ -52,7 +83,16 @@ const staggerContainer = {
 };
 
 export default function SupplyPage() {
-    const [current, setCurrent] = useState(1); // Centered on 2nd item for demo
+
+    // current index for carousel (start on second item for demo)
+    const [current, setCurrent] = useState(1);
+    // which color dot is selected for preview (null = use default item.image)
+    const [selectedVariant, setSelectedVariant] = useState(null);
+
+    // Reset selected variant when current item changes
+    useEffect(() => {
+        setSelectedVariant(null);
+    }, [current]);
 
     const prevSlide = () => {
         setCurrent((prev) => (prev - 1 + items.length) % items.length);
@@ -117,7 +157,8 @@ export default function SupplyPage() {
                         “Lorem ipsum dolor sit amet consectetur. Varius gravida vivamus id eu faucibus. Adipiscing in sit tortor ultrices nunc felis ipsum. Convallis amet proin eu et sit quam tortor volutpat vitae. Ultrices a pharetra lectus leo sollicitudin id aenean.”
                     </div>
                     <div className="flex items-center gap-1">
-                        <span className="text-[#c5b358] text-xl">★★★★☆</span>
+                        {/* <span className="text-[#c5b358] text-xl">★★★★☆</span> */}
+                        <Image src="/Frame28.png" alt="Star Icon" width={100} height={100} />
                     </div>
                 </motion.div>
             </div>
@@ -142,6 +183,8 @@ export default function SupplyPage() {
                             // Modular offset for infinite carousel
                             let offset = (index - current + items.length) % items.length;
                             if (offset > items.length / 2) offset -= items.length;
+                            // If a color variant is selected, only render the active (front) item
+                            if (selectedVariant !== null && offset !== 0) return null;
                             if (Math.abs(offset) > 1) return null;
                             const isActive = offset === 0;
                             // Center the active image absolutely in the container
@@ -159,8 +202,9 @@ export default function SupplyPage() {
                                     transition={{ type: 'spring', stiffness: 260, damping: 30 }}
                                     onClick={() => setCurrent(index)}
                                 >
+                                    {/* use selected variant if set, otherwise use the item's default image */}
                                     <Image
-                                        src={item.image}
+                                        src={items[current].imageVariants?.[selectedVariant] ?? item.image}
                                         alt={item.title}
                                         width={240}
                                         height={240}
@@ -211,11 +255,21 @@ export default function SupplyPage() {
                         variants={fadeInUp}
                     >
                         {items[current].colors.map((color, i) => (
-                            <span
+                            <button
                                 key={i}
-                                className="w-6 h-6 rounded-full border-2 border-white"
-                                style={{ backgroundColor: color }}
-                            ></span>
+                                onClick={() => {
+                                    // if there is a mapped image for this color, select it for preview
+                                    if (items[current].imageVariants && items[current].imageVariants[i]) {
+                                        setSelectedVariant(i);
+                                    } else {
+                                        // otherwise clear selection (fallback to default image)
+                                        setSelectedVariant(null);
+                                    }
+                                }}
+                                className={`w-6 h-6 rounded-full border-2 border-white focus:outline-none ${selectedVariant === i ? 'ring-2 ring-[#c5b358]' : ''}`}
+                                style={{ background: color }}
+                                aria-label={`Select color ${i + 1}`}
+                            />
                         ))}
                     </motion.div>
 
@@ -231,12 +285,7 @@ export default function SupplyPage() {
                         className="flex items-center justify-center gap-2"
                         variants={fadeInUp}
                     >
-                        <div className="flex -space-x-2">
-                            <span className="w-8 h-8 rounded-full bg-[#004953] border-2 border-white inline-block"></span>
-                            <span className="w-8 h-8 rounded-full bg-[#c5b358] border-2 border-white inline-block"></span>
-                            <span className="w-8 h-8 rounded-full bg-[#00a3b9] border-2 border-white inline-block"></span>
-                        </div>
-                        <span className="bg-white px-2 py-1 rounded-full text-xs font-semibold shadow">{items[current].likes}</span>
+                        <Image src="/Frame27.png" alt="User Avatars" width={130} height={130} />
                     </motion.div>
                 </motion.div>
             </div>
