@@ -3,13 +3,13 @@ import Image from "next/image";
 
 const SearchBar = () => {
     return (
-        <div className="flex w-full max-w-full px-2 sm:max-w-[45%] sm:px-0">
+        <div className="flex w-full max-w-full px-2 sm:max-w-[85%] sm:px-0">
             <form
                 action="/api/subscribe"
                 method="get"
                 className="z-10 w-full max-w-[747px]"
             >
-                <div className="flex items-center bg-white rounded-full shadow-md h-12 sm:h-14 px-4 sm:px-4 w-full overflow-visible">
+                <div className="flex items-center bg-[#f0f0f0] rounded-b-2xl shadow-md h-12 sm:h-14 px-4 sm:px-4 w-full overflow-visible">
                     {/* Search Icon */}
                     <Image
                         src="/search.svg"
