@@ -55,8 +55,8 @@ const Header = () => {
                 </div>
 
                 {/* 👉 Gradient Line with About Us text fixed at bottom */}
-                <div className="hidden md:flex absolute top-115 left-0 w-full items-center z-10">
-                    <div className="w-[800px]  h-[60px] bg-gradient-to-r from-[#C8B762] to-transparent"></div>
+                <div className="hidden lg:flex absolute top-115 left-0 w-full items-center z-10">
+                    <div className="w-[800px] h-[60px] bg-gradient-to-r from-[#C8B762] to-transparent"></div>
 
                     <Image
                         src="/Landing_text.svg"
