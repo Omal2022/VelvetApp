@@ -16,10 +16,12 @@ const Navigation = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-[100]">
+        <nav className="top-0 left-0 right-0 ">
+            {/* <nav className="fixed top-0 left-0 right-0 z-[100]"> */}
             {/* Desktop Navbar Container */}
             <div className="hidden lg:block">
-                <div className="glass-navbar max-w-6xl mx-auto mt-4 rounded-2xl px-10 py-4 shadow-lg">
+                <div className="glass-navbar max-w-6xl mx-auto mt-4 px-10 py-4 ">
+                    {/* <div className="glass-navbar max-w-6xl mx-auto mt-4 rounded-2xl px-10 py-4 shadow-lg"> */}
                     <ul className="flex justify-center gap-12 text-white text-lg font-medium">
                         {links.map((link, index) => (
                             <li key={index}>

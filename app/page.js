@@ -4,6 +4,7 @@ import PageWhatWeOffer from "./whatWeOffer/page";
 import SearchBar from "@/component/searchBar";
 import Carousel from "./suupliableItemsPage/supplyPage";
 import Header from "./header";
+import ButtonUp from "./buttonUp";
 
 export default function Home() {
   return (
@@ -25,6 +26,8 @@ export default function Home() {
       <section id="supplyPage" className="px-4 sm:px-8 md:px-20 py-12 sm:py-20">
         <Carousel />
       </section>
+
+      <ButtonUp id="/" />
     </>
   );
 }
