@@ -151,11 +151,11 @@ export default function SupplyPage() {
                     variants={fadeInUp}
                     transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                    <div className="text-[#004953] font-semibold">Bimbo Tomisin</div>
-                    <div className="text-xs text-[#c5b358] mb-2">Event Planner, Bloom Events</div>
-                    <div className="text-gray-500 text-sm mb-2">
+                    <p className="text-[#004953] font-semibold">Bimbo Tomisin</p>
+                    <p className="text-xs text-[#c5b358] mb-2">Event Planner, Bloom Events</p>
+                    <p className="text-gray-500 text-sm mb-2">
                         “Lorem ipsum dolor sit amet consectetur. Varius gravida vivamus id eu faucibus. Adipiscing in sit tortor ultrices nunc felis ipsum. Convallis amet proin eu et sit quam tortor volutpat vitae. Ultrices a pharetra lectus leo sollicitudin id aenean.”
-                    </div>
+                    </p>
                     <div className="flex items-center gap-1">
                         {/* <span className="text-[#c5b358] text-xl">★★★★☆</span> */}
                         <Image src="/Frame28.png" alt="Star Icon" width={100} height={100} />

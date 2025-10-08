@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const ProductCard = ({ title, description, image }) => {
     return (
-        <div className="group relative w-[339px] md:max-w-md  sm:max-w-xs xl:max-w-lg  min-h-[330px] h-[60vw] sm:h-[400px] md:h-[400px] xl:h-[410px] bg-[#F3F3F3] p-4 sm:p-6 md:p-7 overflow-hidden rounded-[20px] shadow-md flex flex-col ">
+        <div className="group relative w-[310px] md:max-w-md  sm:max-w-xs xl:max-w-lg  min-h-[330px] h-[60vw] sm:h-[400px] md:h-[400px] xl:h-[410px] bg-[#F3F3F3] p-4 sm:p-6 md:p-7 overflow-hidden rounded-[20px] shadow-md flex flex-col ">
             {/* hover gradient layer (appears under the bottom-right image) */}
             <div className="absolute inset-0 z-0 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100 bg-gradient-to-b from-[#F3F3F3] from-40%  to-[#C5B358] to-90%"></div>
 
