@@ -122,7 +122,7 @@ export default function SupplyPage() {
                 </motion.h1>
 
                 <motion.p
-                    className="text-gray-500 mb-8 max-w-md"
+                    className="custom-text-lg text-gray-500 mb-8 max-w-md"
                     variants={fadeInUp}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
@@ -173,10 +173,10 @@ export default function SupplyPage() {
                 >
                     <button
                         onClick={prevSlide}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 p-2 rounded-full shadow text-3xl text-[#004953] bg-white/80 hover:bg-[#c5b358] ml-10 z-20"
+                        className="cursor-pointer absolute left-0 top-1/2 -translate-y-1/2 p-2 w-12 h-12 rounded-full flex shadow justify-center items-center text-3xl text-[#004953] bg-white/80 hover:bg-[#c5b358] ml-10 z-20"
                         aria-label="Previous"
                     >
-                        &#8592;
+                        <i className="fa-solid fa-arrow-left fa-beat fa-sm"></i>
                     </button>
                     <div className="relative flex items-center justify-center w-full py-2 overflow-hidden h-[280px]">
                         {items.map((item, index) => {
@@ -216,10 +216,10 @@ export default function SupplyPage() {
                     </div>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow text-3xl text-[#004953] hover:bg-[#c5b358] mr-10 z-20"
+                        className="cursor-pointer absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 p-2 w-12 h-12 rounded-full flex justify-center items-center shadow text-3xl text-[#004953] hover:bg-[#c5b358] mr-10 z-20"
                         aria-label="Next"
                     >
-                        &#8594;
+                        <i className="fa-solid fa-arrow-right fa-beat fa-sm"></i>
                     </button>
                 </motion.div>
 
@@ -266,7 +266,7 @@ export default function SupplyPage() {
                                         setSelectedVariant(null);
                                     }
                                 }}
-                                className={`w-6 h-6 rounded-full border-2 border-white focus:outline-none ${selectedVariant === i ? 'ring-2 ring-[#c5b358]' : ''}`}
+                                className={`w-7 h-7 rounded-full border-2 border-white focus:outline-none cursor-pointer ${selectedVariant === i ? 'ring-2 ring-[#c5b358]' : ''}`}
                                 style={{ background: color }}
                                 aria-label={`Select color ${i + 1}`}
                             />

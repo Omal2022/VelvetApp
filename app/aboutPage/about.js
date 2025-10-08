@@ -21,7 +21,7 @@ const About = ({ id = 1 }) => {
                     <span className="!text-[#004953]">bout us</span>
                 </h1>
 
-                <p className="text-[14px!important] sm:text-[16px!important] md:text-[18px!important] lg:text-[20px!important] xl:text-[24px!important] mb-6 max-w-[600px!important]">
+                <p className="custom-text max-w-[800px] text-justify px-4 mb-6">
                     VelvetCore is a luxury event supply and planning company dedicated to
                     transforming ordinary spaces into breathtaking experiences.
                     Specializing in high-end weddings, corporate functions, social
@@ -29,7 +29,7 @@ const About = ({ id = 1 }) => {
                     of art—elegant, timeless, and unforgettable.
                 </p>
 
-                <p className="text-[14px!important] sm:text-[16px!important] md:text-[18px!important] lg:text-[20px!important] xl:text-[24px!important] mb-6 max-w-[600px!important]">
+                <p className="custom-text max-w-[800px] text-justify px-4 mb-6">
                     Our strength lies in the fusion of creativity and precision. Every
                     fabric, every flower, every lighting choice is intentional. We go
                     beyond aesthetics to craft emotional atmospheres that linger long
