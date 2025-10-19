@@ -9,25 +9,26 @@ body {
 }
 
 /* Glassmorphism effect for navbar */
-/* .glass-navbar {
-  background: rgba(70, 83, 0, 0.486);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  backdrop-filter: blur(16px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-} */
+@media (max-width: 1000px) {
+  .glass-navbar {
+    background: rgba(49, 58, 0, 0.486);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+}
 
 /* se Tailwind’s base layer */
 @layer base {
   h1 {
     font-family: var(--font-cinzel), serif;
     font-size: 3rem; /* adjust as needed */
-    background: linear-gradient(180deg, #004953, #00a2b9);
+    background: linear-gradient(20deg, #004953, #00a2b9);
     -webkit-background-clip: text; /* For Safari/Chrome */
     -webkit-text-fill-color: transparent; /* For Safari/Chrome */
     background-clip: text; /* Standard property */
     color: transparent; /* Fallback */
-    font-weight: 700;
-    font-size: 49px;
+    font-weight: 500;
   }
   h2 {
     font-family: var(--font-cinzel), serif;
@@ -41,6 +42,7 @@ body {
 
   p {
     font-family: var(--font-montserrat), sans-serif;
+    color: #737373;
   }
 
   .h1-white {
@@ -49,7 +51,16 @@ body {
     -webkit-text-fill-color: white !important;
     color: white !important;
   }
-  
+  ::placeholder {
+    font-family: var(--font-montserrat), sans-serif !important;
+    font-size: 15px !important;
+  }
+  @media (min-width: 768px) {
+    ::placeholder {
+      font-family: var(--font-montserrat), sans-serif !important;
+      font-size: 23px !important;
+    }
+  }
 }
 
 /* ------- Text ------- */
@@ -58,7 +69,6 @@ body {
     font-size: 14px !important;
     margin-bottom: 1.5rem; /* mb-6 */
     max-width: 600px;
-    text-align: center;
   }
 
   /* sm:text-[16px!important] */
@@ -85,7 +95,7 @@ body {
   /* xl:text-[24px!important] */
   @media (min-width: 1280px) {
     .custom-text {
-      font-size: 18px !important;
+      font-size: 20px !important;
     }
   }
 }

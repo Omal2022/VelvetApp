@@ -38,7 +38,7 @@ const page = () => {
         variants={textVariants}
       >
         <motion.h1
-          className="font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] mb-6"
+          className="font-medium text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] mb-6"
           variants={textVariants}
         ><span className="lg:text-[100px] xl:text-[130px]">W</span><span>hat We Offer.</span>
         </motion.h1>

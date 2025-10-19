@@ -63,9 +63,9 @@ const Header = () => {
                         alt="About Us"
                         width={440}
                         height={440}
-                        className="sm:w-[500px] md:w-[600px] lg:w-[600px] h-auto mr-[300px]"
+                        className="sm:w-[500px] md:w-[600px] lg:w-[600px] h-auto"
                     />
-                    <div className="w-full h-[60px] bg-gradient-to-l from-[#C8B762] to-transparent"></div>
+                    <div className="w-[200vw] h-[60px] bg-gradient-to-l from-[#C8B762] from-60% to-transparent to-100% "></div>
                 </div>
             </div>
         </section>

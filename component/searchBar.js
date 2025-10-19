@@ -24,7 +24,7 @@ const SearchBar = () => {
                         type="search"
                         name="search"
                         placeholder="Search VelvetCore for available items"
-                        className="flex-grow px-3 bg-transparent outline-none text-sm sm:text-base text-gray-700 placeholder-gray-400"
+                        className="flex-grow px-3 bg-transparent outline-none text-sm sm:text-base text-gray-700 placeholder-gray-400 placeholder-lg"
                     />
 
                     {/* Arrow Icon inside circle */}

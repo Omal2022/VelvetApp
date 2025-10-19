@@ -44,8 +44,8 @@ const Navigation = () => {
 
             {/* Mobile Slide-In Menu */}
             <div
-                className={`fixed top-0 right-0 w-3/4 max-w-xs glass-navbar z-40 transform transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"
-                    } h-[400px] rounded-b-lg shadow-lg py-6`}
+                className={`absolute top-0 right-0 w-3/4 max-w-xs glass-navbar z-40 transform transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"
+                    } h-[400px] rounded-b-lg shadow-lg py-6 lg:hidden`}
             >
                 <div className="flex flex-col items-center gap-6 mt-14">
                     {links.map((link, index) => (
@@ -60,6 +60,7 @@ const Navigation = () => {
                     ))}
                 </div>
             </div>
+
         </nav>
     );
 };
