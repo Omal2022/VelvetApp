@@ -70,6 +70,23 @@ const Footer = () => {
                     className="flex flex-wrap justify-center gap-6 sm:gap-10 md:gap-14 mt-6"
                     variants={staggerContainer}
                 >
+                    {/* Other icons (no popup) */}
+                    <motion.li variants={fadeInUp}>
+                        <a
+                            href="https://wa.me/+2349028975988"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Image
+                                src="whatsapp-01.svg"
+                                alt="whatsapp"
+                                width={90}
+                                height={90}
+                                className="w-11 h-11 sm:w-9 sm:h-9 lg:w-11 lg:h-11 hover:scale-110 transition-transform cursor-pointer"
+                            />
+                        </a>
+                    </motion.li>
+
                     {/* Instagram */}
                     <motion.li
                         className="relative"

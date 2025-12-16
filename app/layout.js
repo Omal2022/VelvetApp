@@ -7,7 +7,7 @@ import script from "next/script";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], // add more weights if needed
+  weight: ["400", "500", "700"], 
   variable: "--font-cinzel",
 });
 

@@ -16,6 +16,9 @@ const items = [
             "#D2DBDA",
             "linear-gradient(135deg,#8E1435 0%,#AB5058 100%)",
             "linear-gradient(135deg,#CFC7C1 0%,#D4B089 100%)",
+            "#c52639",
+            "linear-gradient(135deg,#be3261 0%,#ffc9b4 100%)",
+            "linear-gradient(135deg,#73868a 0%,#7d7581 100%)",
         ],
         // map each color dot to a preview image; adjust paths to match your public images
         imageVariants: [
@@ -23,6 +26,9 @@ const items = [
             "/Ellipse21.png", // your requested pairing for #D2DBDA
             "/Ellipse23.png", // your requested pairing for linear-gradient(135deg,#8E1435 0%,#AB5058 100%)
             "/Ellipse24.png", // your requested pairing for linear-gradient(135deg,#CFC7C1 0%,#D4B089 100%)
+            "/Pionies.jpg",
+            "/Pionies3.jpg",
+            "/Pionies1.jpg",
         ],
         description: "Pionies are the epitome of luxury and charm, with their lush, full blooms that instantly add sophistication to any event. Symbolizing prosperity and happiness, peonies make every occasion feel vibrant, elegant, and truly special",
 
@@ -32,7 +38,7 @@ const items = [
         category: "Flowers Category",
         subtitle: "Most rented flower from VelvetCore",
         title: "#2 Rose Flowers.",
-        colors: ["#876287", "#CEBAAB", "#FED810", "#8D096F", "#2F4BCC", "#B81538"],
+        colors: ["#876287", "#CEBAAB", "#FED810", "#8D096F", "#2F4BCC", "#B81538" , "#e41e27" , "#a4acb8" , "#bdaa98"],
         imageVariants: [
             "/Ellipse(1).png", // paired with #876287
             "/r1.png", // paired with #CEBAAB
@@ -40,6 +46,9 @@ const items = [
             "/r3.png", // paired with #8D096F
             "/r5.png", // paired with #2F4BCC
             "/r6.png", // paired with #B81538
+            "/Roses1.jpeg", // paired with #B81538
+            "/Roses2.jpeg", // paired with #B81538
+            "/Roses3.jpeg", // paired with #B81538
         ],
         description: "Roses are a timeless symbol of elegance and emotion, instantly elevating the atmosphere of any event. Their wide range of colors allows for perfect coordination with any theme, from romantic to luxurious. Beyond their beauty, roses convey warmth and sophistication, leaving a lasting impression on every guest.",
 
